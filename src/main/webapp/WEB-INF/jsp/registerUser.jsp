@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
     <title>${registration}</title>
 </head>
 <body>
@@ -34,21 +34,21 @@
     </form:form>
 
     <!--<a href="createBankAccount">Ajouter compte bancaire</a>-->
-    <c:if test="${currentUser.name !=null}">
+
         <div>
             <p>
                 Desirez Vous Ajouter un nouveau compte ? <a  href="${pageContext.request.contextPath}/createBankAccount">Cliquez Içi</a>
             </p>
         </div>
-    </c:if>
 
-    <c:if test="${currentUser.name != null}">
+
+
         <div>
             <p>
                 Veuillez Ajouter un nouveau role ? <a  href="${pageContext.request.contextPath}/roles">Cliquez Içi</a>
             </p>
         </div>
-    </c:if>
+
 </div>
 </body>
 </html>

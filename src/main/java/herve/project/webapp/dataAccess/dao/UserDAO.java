@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -36,9 +37,11 @@ public class UserDAO {
     public boolean isValidUser(User user) {
 
         if(user != null) {
-            User foundedUser = ProviderConverter.userEntityToUserModel(userRepository.findById(user.getName()).get());
-            if(!user.getName().equals(foundedUser.getName()))
+            Optional<UserEntity> optional = userRepository.findById(user.getName());
+            if (!optional.isPresent()) {
+                //User foundedUser = ProviderConverter.userEntityToUserModel(userEntity);
                 return true;
+            }
         }
         return false;
     }

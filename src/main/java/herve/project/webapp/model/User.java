@@ -25,18 +25,26 @@ public class User {
     private String hobby;
 
 
-    //private Set<Role> roles = new HashSet<>();
+    private Set<Role> roles = new HashSet<>();
 
 
 
     public User() {
     }
 
-    public User(String name, Integer age, Boolean male, String hobby) {
+    /*public User(String name, Integer age, Boolean male, String hobby) {
         this.name = name.toLowerCase();
         this.age = age;
         this.male = male;
         this.hobby = hobby;
+    }*/
+
+    public User(String name, Integer age, Boolean male, String hobby, Set<Role> roles) {
+        this.name = name;
+        this.age = age;
+        this.male = male;
+        this.hobby = hobby;
+        this.roles = roles;
     }
 
     public String getName() {
@@ -72,7 +80,7 @@ public class User {
     }
 
 
-    /*public Set<Role> getRoles() {
+    public Set<Role> getRoles() {
         return roles;
     }
 
@@ -80,11 +88,6 @@ public class User {
         this.roles = roles;
     }
 
-    public void addBankAccounts(Set<BankAccount> bankAccounts) {
-
-        for (BankAccount bankAccount : bankAccounts)
-            this.bankAccounts.add(bankAccount);
-    }*/
 
     public boolean exists() {
 
@@ -111,6 +114,7 @@ public class User {
                 ", age=" + age +
                 ", male=" + male +
                 ", hobby='" + hobby + '\'' +
+                ", roles=" + roles +
                 '}';
     }
 }

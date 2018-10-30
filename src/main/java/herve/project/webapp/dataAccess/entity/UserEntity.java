@@ -1,11 +1,11 @@
 package herve.project.webapp.dataAccess.entity;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import herve.project.webapp.model.Role;
+
+import javax.persistence.*;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "user")
@@ -24,14 +24,28 @@ public class UserEntity {
     @Column(name = "hobby")
     private String hobby;
 
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "users_roles",
+            joinColumns = {@JoinColumn(name = "user_role", referencedColumnName = "name")},
+            inverseJoinColumns = { @JoinColumn(name = "role_user", referencedColumnName = "role") })
+    private Set<RoleEntity> roleEntities;
+
     public UserEntity() {
     }
 
-    public UserEntity(String name, Integer age, Boolean male, String hobby) {
+    /*public UserEntity(String name, Integer age, Boolean male, String hobby) {
         this.name = name;
         this.age = age;
         this.male = male;
         this.hobby = hobby;
+    }*/
+
+    public UserEntity(String name, Integer age, Boolean male, String hobby, Set<RoleEntity> roleEntities) {
+        this.name = name;
+        this.age = age;
+        this.male = male;
+        this.hobby = hobby;
+        this.roleEntities = roleEntities;
     }
 
     public String getName() {
@@ -64,6 +78,14 @@ public class UserEntity {
 
     public void setHobby(String hobby) {
         this.hobby = hobby;
+    }
+
+    public Set<RoleEntity> getRoleEntities() {
+        return roleEntities;
+    }
+
+    public void setRoleEntities(Set<RoleEntity> roleEntities) {
+        this.roleEntities = roleEntities;
     }
 
     @Override

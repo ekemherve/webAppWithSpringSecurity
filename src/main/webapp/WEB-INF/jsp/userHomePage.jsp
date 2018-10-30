@@ -1,6 +1,6 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@include file="include/importTags.jsp"%>
-<%@include file="include/importLinks.jsp"%>
+<%--<%@include file="include/importLinks.jsp"%>--%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,10 +21,10 @@
         <tbody>
         <c:if test="${currentUser!=null}">
             <tr>
-                <td>${user.name}</td>
-                <td>${user.age}</td>
-                <td>${user.male  ? "Boy" : "Girl"}</td>
-                <td>${user.hobby}</td>
+                <td>${currentUser.name}</td>
+                <td>${currentUser.age}</td>
+                <td>${currentUser.male  ? "Boy" : "Girl"}</td>
+                <td>${currentUser.hobby}</td>
             </tr>
         </c:if>
         </tbody>
