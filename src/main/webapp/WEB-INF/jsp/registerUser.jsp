@@ -1,12 +1,14 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@include file="include/importTags.jsp"%>
-<%@include file="include/importLinks.jsp"%>
+<%--<%@include file="include/importTags.jsp"%>--%>
+<%--<%@include file="include/importLinks.jsp"%>--%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+    <meta charset="UTF-8">
+    <%--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >--%>
     <title>${registration}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
 </head>
 <body>
 <div class="container">

@@ -37,9 +37,11 @@ public class WelcomeController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public String home(Model model) {
+    public String home(Model model, @ModelAttribute(CURRENT_USER)User user) {
         model.addAttribute("welcome", "WelcomePage");
 
+        if(user.exists())
+            return "redirect:/user";
         return "integrated:welcome";
     }
 
@@ -51,8 +53,7 @@ public class WelcomeController {
 
     @RequestMapping(value = "/register" , method = RequestMethod.GET)
     public String register(Model model, @ModelAttribute(CURRENT_USER) User user) {
-
-        //System.out.println(user);
+        
         model.addAttribute("hobbies", hobbyService.getHobbies());
         return "integrated:registerUser";
     }

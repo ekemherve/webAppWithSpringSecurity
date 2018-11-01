@@ -79,6 +79,20 @@
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.aerse/spring-security-taglib -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+
+        </dependency>
+
         <!-- https://mvnrepository.com/artifact/org.webjars/jquery -->
         <dependency>
             <groupId>org.webjars</groupId>
